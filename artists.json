@@ -1,3 +1,4 @@
+const artists = `
 [{
 		"id": 1,
 		"name": "2 Chainz",
@@ -848,4 +849,4 @@
 		"name": "ZAYN",
 		"type": "Solo"
 	}
-]
+]`;
