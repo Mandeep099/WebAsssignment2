@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet">
     <script src="artists.json"></script>
     <script src="genres.json"></script>
     <script src="sample-songs.json"></script>
@@ -8,27 +10,42 @@
   </head>
   <body>
     <h1>Group Members: Mandeep Bal and Sadman Shahryier</h1>
-
-    <h2>Artists:</h2>
-    <select id="artistSelect"></select>
-
-    <h2>Genres:</h2>
-    <select id="genreSelect"></select>
-
-    <!-- <h2>Simple Songs:</h2>
-    <select id="sampleSongSelect"></select> -->
-
     <div id = "sampleSongSelect">
-      
+      <table id="songBody">
+        <thead id="testing">
+          <tr>
+              <th>Title <button id="sortTitle">Sort Title</button></th>
+              <th>Artist <button id="sortArtist">Sort Artist</button></th>
+              <th>Year <button id="sortYear">Sort Year</button></th>
+              <th>Genre <button id="sortGenre">Sort Genre</button></th>
+              <th>Popularity <button id="sortPopularity">Sort Popularity</button></th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
     </div>
+    <div id="basicSearch">
+      <input type="radio" name="search">
+      <label for="title">Title</label>
+      <input name="title">
 
-    <h2>Button Testing:</h2>
-    <button id="sortTitle">Sort Title</button>
-    <button id="sortArtist">Sort Artist</button>
-    <button id="sortYear">Sort Year</button>
-    <button id="sortGenre">Sort Genre</button>
-    <button id="sortPopularity">Sort Popularity</button>
+      <input type="radio" name="search">
+      <label for="artist">Artist</label>
+      <select id="artistSelect" class="dropdown">
 
+      </select>
 
+      <input type="radio" name="search">
+      <label for="genre">Genre</label>
+      <select id="genreSelect" class="dropdown">
+
+      </select>
+      <br>
+      <button>Clear</button>
+      <button>Filter</button>
+
+    </div>
   </body>
 </html>
