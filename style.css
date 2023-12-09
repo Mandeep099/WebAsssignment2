@@ -1,34 +1,144 @@
-#songBody, #table2{
+#songBody{
     display: inline-block;
     border: solid;
     border-collapse: collapse;
-    width: 70%;
+    box-shadow: 5px 5px 5px 5px black;
+    width: 60%;
     height: 500px;
     overflow-y: scroll;
     background-color: white;
     margin: auto;
 }
 
-/*not important atm*/
+#table2{
+    display: inline-block;
+    border: solid;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 5px 5px black;
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    background-color: white;
+    margin: auto;
+}
+
+#tablePlaylist{
+    margin: auto;
+}
+
 #menuSection{
-    background-color: lightblue;
     padding-top: 10px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: grey;
+}
+
+#titleName{
+    width: 40%;
+    height: 20px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+#creditHover{
+    border: solid;
+    box-shadow: 5px 5px 5px white;
+    width: 35%;
+    background-color: lightgrey;
+    color: black;
+    margin: auto;
+    text-align: center;
+}
+
+#artistSelect{
+    font-size: large;
+}
+
+#genreSelect{
+    font-size: large;
+}
+
+#songSection{
+    background-color: grey;
 }
 
 #searchSection{
-    background-color: #adadad;
-    height: 100px;
-    width: 20%;
-    padding: 5px;
+    /* background-color: grey; */
+    width: 60%;
     margin: auto;
+}
+
+#playlistClose{
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    font-size: 15px;
+    font-family: cursive;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+header{
+    text-align: center;
+    font-family: cursive;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    padding-bottom: 50px;
+}
+
+footer{
+    text-align: center;
+    font-family: cursive;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+}
+
+select{
+    width: 39.5%;
+    height: 25px;
+    text-align: center;
+    bottom: 100%;
+}
+
+label{
+    font-family:cursive;
+    font-size: 20px;
 }
 
 td{
     padding: 3px;
 }
 
+th{
+    padding: 5px;
+}
+
 tr:nth-child(odd){
     background-color: lightgrey;
+}
+
+.headerButtons{
+    padding: 5px;
+    border-radius: 10px;
+    width: 5%;
+    font-size: 15px;
+    font-family: cursive;
+}
+
+.spacing{
+    margin-top: 30px;
+}
+
+.buttonStyle{
+    padding: 10px;
+    border-radius: 10px;
+    width: 15%;
+    font-size: 15px;
+    font-family: cursive;
 }
 
 .fullButton{

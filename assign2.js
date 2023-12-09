@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async function(){
    let songStorage = JSON.parse(localStorage.getItem('songs')) || [];
    let playlist = [];
    songStorage = await getSongData(songStorage);
+   songStorage = sortItems(songStorage, "title");
    view(songStorage);
 
    //sort buttons
@@ -54,6 +55,8 @@ document.addEventListener("DOMContentLoaded", async function(){
    });
 
    //filter events
+   //used to help implement the below querry selector
+   //https://stackoverflow.com/questions/21166860/check-a-radio-button-with-javascript
    document.querySelector("#filter").addEventListener("click", function(){
       if(document.querySelector("#titleRadio").checked){
          songStorage = JSON.parse(localStorage.getItem('songs')) || [];
@@ -117,7 +120,16 @@ document.addEventListener("DOMContentLoaded", async function(){
       section.setAttribute("class", "visible");
       section2.classList.toggle("visible");
       section3.setAttribute("class", "visible")
-   })
+   });
+
+   document.querySelector("#credit").addEventListener("mouseover", function(){
+      let hover = document.querySelector("#creditHover");
+      hover.setAttribute("class", "visible");
+      setTimeout(function(){
+         hover.setAttribute("class", "hidden");
+      },5000);
+
+   });
 
    //checking if local storage is empty or not
    async function getSongData(songStorage){
@@ -271,6 +283,8 @@ document.addEventListener("DOMContentLoaded", async function(){
 
    //would like to error test these dont know if its possible
    //filter functions
+   //used this to help implement the filter functions
+   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
    function filterTitle(songStorage){
       let titleName = document.querySelector("#titleName").value;
       return songStorage.filter(a => a.title.toString().includes(titleName));
