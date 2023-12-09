@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Assignment 2</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
     <script src="artists.json"></script>
     <script src="genres.json"></script>
     <script src="sample-songs.json"></script>
@@ -13,86 +13,140 @@
     <h1>Song Browser</h1>
     <button id="playlist" class="headerButtons">Playlist</button>
     <button id="credit" class="headerButtons">Credit</button>
-    <p id="creditHover" class="hidden">Created By Mandeep Bal and Sadman Shahryier. Github Repository: <a href = "https://github.com/Mandeep099/WebAsssignment2">Repository</a></p>
+    <p id="creditHover" class="hidden">
+      Created By Mandeep Bal and Sadman Shahryier. Github Repository:
+      <a href="https://github.com/Mandeep099/WebAsssignment2">Repository</a>
+    </p>
   </header>
   <body>
     <section id="songSection" class="visible">
       <table id="songBody">
         <thead>
           <tr>
-              <th>Title <button id="sortTitle" class="fullButton">Sort Title</button></th>
-              <th>Artist <button id="sortArtist" class="fullButton">Sort Artist</button></th>
-              <th>Year <button id="sortYear" class="fullButton">Sort Year</button></th>
-              <th>Genre <button id="sortGenre" class="fullButton">Sort Genre</button></th>
-              <th>Popularity <button id="sortPopularity" class="fullButton">Sort Popularity</button></th>
+            <th>
+              Title
+              <button id="sortTitle" class="fullButton">Sort Title</button>
+            </th>
+            <th>
+              Artist
+              <button id="sortArtist" class="fullButton">Sort Artist</button>
+            </th>
+            <th>
+              Year <button id="sortYear" class="fullButton">Sort Year</button>
+            </th>
+            <th>
+              Genre
+              <button id="sortGenre" class="fullButton">Sort Genre</button>
+            </th>
+            <th>
+              Popularity
+              <button id="sortPopularity" class="fullButton">
+                Sort Popularity
+              </button>
+            </th>
           </tr>
         </thead>
-        <tbody>
-
-        </tbody>
+        <tbody></tbody>
       </table>
+      <!--single song view div-->
+      <div id="singleSongViewContainer">
+        <h2>Song Information</h2>
+        <p id="title"></p>
+        <p id="artist"></p>
+        <p id="artistType"></p>
+        <p id="genre"></p>
+        <p id="year"></p>
+        <p id="duration"></p>
+
+        <h2>Song Analytics</h2>
+        <p id="bpm"></p>
+        <p id="energy"></p>
+        <p id="danceability"></p>
+        <p id="liveness"></p>
+        <p id="valence"></p>
+        <p id="acousticness"></p>
+        <p id="speechiness"></p>
+        <p id="popularity"></p>
+      </div>
       <div id="snackbar"></div>
     </section>
 
     <section id="menuSection" class="visible">
       <div id="searchSection">
-        <input type="radio" name="search" value="1" id="titleRadio" checked>
+        <input type="radio" name="search" value="1" id="titleRadio" checked />
         <label for="title">Title</label>
-        <input name="title" id="titleName">
-        <br>
+        <input name="title" id="titleName" />
+        <br />
         <div class="spacing">
-          <input type="radio" name="search" value="2" id="artistRadio">
+          <input type="radio" name="search" value="2" id="artistRadio" />
           <label for="artist">Artist</label>
-          <select name="artist" id="artistSelect" class="dropdown">
-
-          </select>
+          <select name="artist" id="artistSelect" class="dropdown"></select>
         </div>
-        <br>
+        <br />
         <div class="spacing">
-          <input type="radio" name="search" value="3" id="genreRadio">
+          <input type="radio" name="search" value="3" id="genreRadio" />
           <label for="genre">Genre</label>
-          <select id="genreSelect" class="dropdown">
-          
-          </select>
+          <select id="genreSelect" class="dropdown"></select>
         </div>
-        <br>
+        <br />
         <div class="spacing">
           <button id="clear" class="buttonStyle">Clear</button>
           <button id="filter" class="buttonStyle">Filter</button>
-          
         </div>
-
-        </div>
+      </div>
     </section>
 
     <section id="playlistSection" class="hidden">
-      <div id = "tablePlaylist">
+      <div id="tablePlaylist">
         <p id="playlistMath"></p>
         <table id="table2">
           <h2>Playlist</h2>
           <thead>
             <tr>
-                <th>Title </th>
-                <th>Artist </th>
-                <th>Year </th>
-                <th>Genre </th>
-                <th>Popularity </th>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Year</th>
+              <th>Genre</th>
+              <th>Popularity</th>
             </tr>
           </thead>
-          <tbody>
-    
-          </tbody>
-         </table>
-         <br>
-         <div class="spacing">
-          <button  id="playlistClear" class="buttonStyle">Clear</button>
-          <button  id="playlistClose">Close Playlist</button>
+          <tbody></tbody>
+        </table>
+        <br />
+        <div class="spacing">
+          <button id="playlistClear" class="buttonStyle">Clear</button>
+          <button id="playlistClose">Close Playlist</button>
+        </div>
+      </div>
+      <div id="singleSongViewContainer">
+        <div id="songInfo">
+          <h2>Song Information</h2>
+          <p id="title1"></p>
+          <p id="artist1"></p>
+          <p id="artistType1"></p>
+          <p id="genre1"></p>
+          <p id="year1"></p>
+          <p id="duration1"></p>
+        </div>
+        <div id="songAnalytics">
+          <h2>Song Analytics</h2>
+          <p id="bpm1"></p>
+          <p id="energy1"></p>
+          <p id="danceability1"></p>
+          <p id="liveness1"></p>
+          <p id="valence1"></p>
+          <p id="acousticness1"></p>
+          <p id="speechiness1"></p>
+          <p id="popularity1"></p>
         </div>
       </div>
     </section>
     <footer>
       <h4>Copyright &copy; 2023 Mandeep Bal and Sadman Shahryier</h4>
-      <p>Github Repository: <a href = "https://github.com/Mandeep099/WebAsssignment2">Repository</a>
-  </footer>
+      <p>
+        Github Repository:
+        <a href="https://github.com/Mandeep099/WebAsssignment2">Repository</a>
+      </p>
+    </footer>
   </body>
 </html>
