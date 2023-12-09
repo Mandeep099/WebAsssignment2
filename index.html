@@ -9,43 +9,75 @@
     <script src="assign2.js"></script>
   </head>
   <body>
-    <h1>Group Members: Mandeep Bal and Sadman Shahryier</h1>
-    <div id = "sampleSongSelect">
+    <!-- <h1>Group Members: Mandeep Bal and Sadman Shahryier</h1> -->
+    <section id="songSection" class="visible">
       <table id="songBody">
-        <thead id="testing">
+        <thead>
           <tr>
-              <th>Title <button id="sortTitle">Sort Title</button></th>
-              <th>Artist <button id="sortArtist">Sort Artist</button></th>
-              <th>Year <button id="sortYear">Sort Year</button></th>
-              <th>Genre <button id="sortGenre">Sort Genre</button></th>
-              <th>Popularity <button id="sortPopularity">Sort Popularity</button></th>
+              <th>Title <button id="sortTitle" class="fullButton">Sort Title</button></th>
+              <th>Artist <button id="sortArtist" class="fullButton">Sort Artist</button></th>
+              <th>Year <button id="sortYear" class="fullButton">Sort Year</button></th>
+              <th>Genre <button id="sortGenre" class="fullButton">Sort Genre</button></th>
+              <th>Popularity <button id="sortPopularity" class="fullButton">Sort Popularity</button></th>
           </tr>
         </thead>
         <tbody>
 
         </tbody>
       </table>
-    </div>
-    <div id="basicSearch">
-      <input type="radio" name="search">
-      <label for="title">Title</label>
-      <input name="title">
+      <div id="snackbar"></div>
+    </section>
 
-      <input type="radio" name="search">
-      <label for="artist">Artist</label>
-      <select id="artistSelect" class="dropdown">
+    <section id="menuSection" class="visible">
+      <h1>Song Search</h1>
+      <div id="searchSection">
+        <input type="radio" name="search" value="1" id="titleRadio">
+        <label for="title">Title</label>
+        <input name="title" id="titleName">
+        <br>
 
-      </select>
+        <input type="radio" name="search" value="2" id="artistRadio">
+        <label for="artist">Artist</label>
+        <select name="artist" id="artistSelect" class="dropdown">
 
-      <input type="radio" name="search">
-      <label for="genre">Genre</label>
-      <select id="genreSelect" class="dropdown">
+        </select>
+        <br>
 
-      </select>
-      <br>
-      <button>Clear</button>
-      <button>Filter</button>
+        <input type="radio" name="search" value="3" id="genreRadio">
+        <label for="genre">Genre</label>
+        <select id="genreSelect" class="dropdown">
+        
+        </select>
+        <br>
 
-    </div>
+        <button id="clear">Clear</button>
+        <button id="filter">Filter</button>
+        <button id="playlist">Playlist</button>
+
+        </div>
+    </section>
+
+    <section id="playlistSection" class="hidden">
+      <div id = "tablePlaylist">
+        <p id="playlistMath"></p>
+        <table id="table2">
+          <h2>Playlist</h2>
+          <thead>
+            <tr>
+                <th>Title </th>
+                <th>Artist </th>
+                <th>Year </th>
+                <th>Genre </th>
+                <th>Popularity </th>
+            </tr>
+          </thead>
+          <tbody>
+    
+          </tbody>
+         </table>
+         <button  id="playlistClear">Clear</button>
+         <button  id="playlistClose">Close Playlist</button>
+      </div>
+    </section>
   </body>
 </html>

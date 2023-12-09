@@ -1,8 +1,63 @@
-#songBody{
+#songBody, #table2{
     display: inline-block;
     border: solid;
-    width: 100%;
+    border-collapse: collapse;
+    width: 70%;
     height: 500px;
     overflow-y: scroll;
     background-color: white;
+    margin: auto;
+}
+
+/*not important atm*/
+#menuSection{
+    background-color: lightblue;
+    padding-top: 10px;
+}
+
+#searchSection{
+    background-color: #adadad;
+    height: 100px;
+    width: 20%;
+    padding: 5px;
+    margin: auto;
+}
+
+td{
+    padding: 3px;
+}
+
+tr:nth-child(odd){
+    background-color: lightgrey;
+}
+
+.fullButton{
+    width: 100%;
+}
+
+/*taken from*/
+/*https://www.geeksforgeeks.org/how-to-create-a-snackbar-using-hmtl-css-javascript/*/
+#snackbar{
+    visibility: hidden;
+    min-width: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    left: 45%;
+    bottom: 10px;
+    z-index: 1;
+}
+/*need to change this*/
+#snackbar.show {
+    visibility: visible;
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: flex;
 }
