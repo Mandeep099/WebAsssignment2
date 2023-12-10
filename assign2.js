@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const speechiness = song.analytics.speechiness;
     const popularity = song.details.popularity;
 
-    //convert duration format to minutes seconds
+    //convert duration format to minutes + seconds
     const minutes = Math.floor(durationInSeconds / 60);
     const seconds = durationInSeconds % 60;
     const formattedDuration = `${minutes} minutes ${seconds} seconds`;
