@@ -106,9 +106,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     let section = document.querySelector("#songSection");
     let section2 = document.querySelector("#playlistSection");
     let section3 = document.querySelector("#menuSection");
+    let section4 = document.querySelector("#singleSongViewContainer");
+    let button = document.querySelector("#closeSongDetails");
+
+    button.setAttribute("class", "hidden");
     section.setAttribute("class", "hidden");
     section2.classList.toggle("visible");
     section3.setAttribute("class", "hidden");
+    section4.setAttribute("style", " ");
+    section4.setAttribute("class", "hidden");
     playListView(playlist);
   });
 
@@ -118,6 +124,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       let section = document.querySelector("#songSection");
       let section2 = document.querySelector("#playlistSection");
       let section3 = document.querySelector("#menuSection");
+
       section.setAttribute("class", "visible");
       section2.classList.toggle("visible");
       section3.setAttribute("class", "visible");
@@ -130,6 +137,24 @@ document.addEventListener("DOMContentLoaded", async function () {
       hover.setAttribute("class", "hidden");
     }, 5000);
   });
+
+  //close single song view
+  document
+    .querySelector("#closeSongDetails")
+    .addEventListener("click", function () {
+      let section = document.querySelector("#songSection");
+      let section2 = document.querySelector("#playlistSection");
+      let section3 = document.querySelector("#menuSection");
+      let section4 = document.querySelector("#singleSongViewContainer");
+      let button = document.querySelector("#closeSongDetails");
+
+      button.setAttribute("class", "hidden");
+      section.setAttribute("class", "visible");
+      section2.setAttribute("class", "hidden");
+      section3.setAttribute("class", "visible");
+      section4.setAttribute("style", " ");
+      section4.setAttribute("class", "hidden");
+    });
 
   //checking if local storage is empty or not
   async function getSongData(songStorage) {
@@ -182,6 +207,20 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       //click event for title link
       titleLink.addEventListener("click", function () {
+        let button = document.querySelector("#closeSongDetails");
+        let singleSong = document.querySelector("#singleSongViewContainer");
+        let section = document.querySelector("#songSection");
+        let section3 = document.querySelector("#menuSection");
+        let playlistSec = document.querySelector("#playlistSection");
+
+        button.setAttribute("class", "visible");
+        singleSong.setAttribute("class", "visible");
+        section.setAttribute("class", "hidden");
+        section3.setAttribute("class", "hidden");
+        singleSong.setAttribute("style", "display:inline-block;");
+
+        playlistSec.setAttribute("class", "hidden");
+
         displaySingleSongView(value);
       });
 
@@ -218,6 +257,42 @@ document.addEventListener("DOMContentLoaded", async function () {
     const seconds = durationInSeconds % 60;
     const formattedDuration = `${minutes} minutes ${seconds} seconds`;
 
+    const progressBarElement = document.createElement("progress");
+    const progressBarElement2 = document.createElement("progress");
+    const progressBarElement3 = document.createElement("progress");
+    const progressBarElement4 = document.createElement("progress");
+    const progressBarElement5 = document.createElement("progress");
+    const progressBarElement6 = document.createElement("progress");
+    const progressBarElement7 = document.createElement("progress");
+    const progressBarElement8 = document.createElement("progress");
+
+    progressBarElement.setAttribute("value", bpm);
+    progressBarElement2.setAttribute("value", energy);
+    progressBarElement3.setAttribute("value", danceability);
+    progressBarElement4.setAttribute("value", liveness);
+    progressBarElement5.setAttribute("value", valence);
+    progressBarElement6.setAttribute("value", acousticness);
+    progressBarElement7.setAttribute("value", speechiness);
+    progressBarElement8.setAttribute("value", popularity);
+
+    const bpmSelect = document.querySelector("#bpm");
+    const energySelect = document.querySelector("#energy");
+    const danceabilitySelect = document.querySelector("#danceability");
+    const livenessSelect = document.querySelector("#liveness");
+    const valenceSelect = document.querySelector("#valence");
+    const acousticnessSelect = document.querySelector("#acousticness");
+    const speechinessSelect = document.querySelector("#speechiness");
+    const popularitySelect = document.querySelector("#popularity");
+
+    progressBarElement.setAttribute("max", 300);
+    progressBarElement2.setAttribute("max", 300);
+    progressBarElement3.setAttribute("max", 300);
+    progressBarElement4.setAttribute("max", 300);
+    progressBarElement5.setAttribute("max", 300);
+    progressBarElement6.setAttribute("max", 300);
+    progressBarElement7.setAttribute("max", 300);
+    progressBarElement8.setAttribute("max", 300);
+
     document.querySelector("#title").textContent = "Title: " + songName;
     document.querySelector("#artist").textContent = "Artist: " + artistName;
     document.querySelector("#artistType").textContent =
@@ -226,40 +301,29 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelector("#year").textContent = "Year: " + year;
     document.querySelector("#duration").textContent =
       "Duration: " + formattedDuration;
-    document.querySelector("#bpm").textContent = "BPM: " + bpm;
-    document.querySelector("#energy").textContent = "Energy: " + energy;
+    document.querySelector("#bpm").textContent = "BPM: " + bpm + " ";
+    document.querySelector("#energy").textContent = "Energy: " + energy + " ";
     document.querySelector("#danceability").textContent =
-      "Danceability: " + danceability;
-    document.querySelector("#liveness").textContent = "Liveness: " + liveness;
-    document.querySelector("#valence").textContent = "Valence: " + valence;
+      "Danceability: " + danceability + " ";
+    document.querySelector("#liveness").textContent =
+      "Liveness: " + liveness + " ";
+    document.querySelector("#valence").textContent =
+      "Valence: " + valence + " ";
     document.querySelector("#acousticness").textContent =
-      "Acousticness: " + acousticness;
+      "Acousticness: " + acousticness + " ";
     document.querySelector("#speechiness").textContent =
-      "Speechiness: " + speechiness;
+      "Speechiness: " + speechiness + " ";
     document.querySelector("#popularity").textContent =
-      "Popularity: " + popularity;
+      "Popularity: " + popularity + " ";
 
-    //playlist view
-    document.querySelector("#title1").textContent = "Title: " + songName;
-    document.querySelector("#artist1").textContent = "Artist: " + artistName;
-    document.querySelector("#artistType1").textContent =
-      "Artist Type: " + artistType;
-    document.querySelector("#genre1").textContent = "Genre: " + genre;
-    document.querySelector("#year1").textContent = "Year: " + year;
-    document.querySelector("#duration1").textContent =
-      "Duration: " + formattedDuration;
-    document.querySelector("#bpm1").textContent = "BPM: " + bpm;
-    document.querySelector("#energy1").textContent = "Energy: " + energy;
-    document.querySelector("#danceability1").textContent =
-      "Danceability: " + danceability;
-    document.querySelector("#liveness1").textContent = "Liveness: " + liveness;
-    document.querySelector("#valence1").textContent = "Valence: " + valence;
-    document.querySelector("#acousticness1").textContent =
-      "Acousticness: " + acousticness;
-    document.querySelector("#speechiness1").textContent =
-      "Speechiness: " + speechiness;
-    document.querySelector("#popularity1").textContent =
-      "Popularity: " + popularity;
+    bpmSelect.appendChild(progressBarElement);
+    energySelect.appendChild(progressBarElement2);
+    danceabilitySelect.appendChild(progressBarElement3);
+    livenessSelect.appendChild(progressBarElement4);
+    valenceSelect.appendChild(progressBarElement5);
+    acousticnessSelect.appendChild(progressBarElement6);
+    speechinessSelect.appendChild(progressBarElement7);
+    popularitySelect.appendChild(progressBarElement8);
   }
 
   //snackbar funtion

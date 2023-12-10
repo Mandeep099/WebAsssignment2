@@ -48,29 +48,30 @@
         </thead>
         <tbody></tbody>
       </table>
-      <!--single song view div-->
-      <div id="singleSongViewContainer">
-        <h2>Song Information</h2>
-        <p id="title"></p>
-        <p id="artist"></p>
-        <p id="artistType"></p>
-        <p id="genre"></p>
-        <p id="year"></p>
-        <p id="duration"></p>
-
-        <h2>Song Analytics</h2>
-        <p id="bpm"></p>
-        <p id="energy"></p>
-        <p id="danceability"></p>
-        <p id="liveness"></p>
-        <p id="valence"></p>
-        <p id="acousticness"></p>
-        <p id="speechiness"></p>
-        <p id="popularity"></p>
-      </div>
-      <div id="snackbar"></div>
     </section>
 
+    <!--single song view div-->
+    <div id="singleSongViewContainer" class="hidden">
+      <h2>Song Information</h2>
+      <p id="title"></p>
+      <p id="artist"></p>
+      <p id="artistType"></p>
+      <p id="genre"></p>
+      <p id="year"></p>
+      <p id="duration"></p>
+
+      <h2>Song Analytics</h2>
+      <p id="bpm"></p>
+      <p id="energy"></p>
+      <p id="danceability"></p>
+      <p id="liveness"></p>
+      <p id="valence"></p>
+      <p id="acousticness"></p>
+      <p id="speechiness"></p>
+      <p id="popularity"></p>
+    </div>
+
+    <div id="snackbar"></div>
     <section id="menuSection" class="visible">
       <div id="searchSection">
         <input type="radio" name="search" value="1" id="titleRadio" checked />
@@ -118,9 +119,8 @@
           <button id="playlistClose">Close Playlist</button>
         </div>
       </div>
-      <div id="singleSongViewContainer">
-        <div id="songInfo">
-          <!--single song view div for playlist-->
+      <!-- <div id="singleSongViewContainer1" class="hidden">
+        <div id="songInfo1">
           <h2>Song Information</h2>
           <p id="title1"></p>
           <p id="artist1"></p>
@@ -129,7 +129,7 @@
           <p id="year1"></p>
           <p id="duration1"></p>
         </div>
-        <div id="songAnalytics">
+        <div id="songAnalytics1">
           <h2>Song Analytics</h2>
           <p id="bpm1"></p>
           <p id="energy1"></p>
@@ -140,8 +140,9 @@
           <p id="speechiness1"></p>
           <p id="popularity1"></p>
         </div>
-      </div>
+      </div> -->
     </section>
+    <button id="closeSongDetails" class="hidden">Close Song Details</button>
     <footer>
       <h4>Copyright &copy; 2023 Mandeep Bal and Sadman Shahryier</h4>
       <p>
